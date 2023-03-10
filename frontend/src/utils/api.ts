@@ -7,7 +7,7 @@ import {
   TemplateBody,
 } from "../types/api";
 
-const BASEURL = "http://127.0.0.1:8000/",
+const BASEURL = "https://backend-1-j6216561.deta.app/",
   TIMEOUT = 1000 * 5;
 
 const Api = axios.create({
