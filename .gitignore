@@ -25,6 +25,6 @@ yarn-error.log*
 # python virtual environment
 **/venv
 
-my-app/public
+frontend/public
 /.vscode
 **/__pycache__
