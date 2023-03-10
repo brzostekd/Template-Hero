@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./index.css";
 import {
+  Box,
   Center,
   ChakraBaseProvider,
   extendTheme,
@@ -23,6 +25,8 @@ const myBrandColor = {
 };
 
 const theme = extendTheme({
+  initialColorMode: "dark",
+  useSystemColorMode: false,
   colors: {
     brand: myBrandColor,
   },
@@ -34,20 +38,21 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ChakraBaseProvider theme={theme}>
-      <Center
-        alignContent={"center"}
-        minW={"100vw"}
-        minH={"100vh"}
+      <Box
+        maxW={"100vw"}
+        maxH={"100vh"}
+        overflow="hidden"
         sx={{
           "*::-webkit-scrollbar": {
-            width: "0.75rem",
+            width: "0.5rem",
+            height: "0.5rem",
           },
           "*::-webkit-scrollbar-thumb": {
-            backgroundColor: "gray.200",
+            backgroundColor: "gray.500",
             borderRadius: "full",
           },
           "*::-webkit-scrollbar-thumb:hover": {
-            backgroundColor: "gray.300",
+            backgroundColor: "gray.400",
           },
           "*::-webkit-scrollbar-corner": {
             display: "none",
@@ -55,7 +60,7 @@ root.render(
         }}
       >
         <App />
-      </Center>
+      </Box>
     </ChakraBaseProvider>
   </React.StrictMode>
 );

@@ -1,12 +1,32 @@
-import { Card, StyleProps } from "@chakra-ui/react";
+import {
+  Card,
+  CardHeader,
+  CardProps,
+  ComponentWithAs,
+  Heading,
+  StyleProps,
+} from "@chakra-ui/react";
 import React, { PropsWithChildren } from "react";
-
-const CustomCard: React.FC<PropsWithChildren<StyleProps>> = ({
+type props = {
+  heading?: string;
+};
+const CustomCard: React.FC<PropsWithChildren<CardProps> & props> = ({
   children,
+  heading,
   ...StyleProps
 }) => {
   return (
-    <Card backgroundColor={"brand.100"} variant={"outline"} {...StyleProps}>
+    <Card
+      backgroundColor={"blue.800"}
+      variant={"filled"}
+      borderRadius={0}
+      {...StyleProps}
+    >
+      {heading ? (
+        <CardHeader>
+          <Heading color={"white"}>{heading}</Heading>
+        </CardHeader>
+      ) : null}
       {children}
     </Card>
   );

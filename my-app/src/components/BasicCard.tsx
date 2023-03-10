@@ -2,39 +2,64 @@ import {
   Button,
   Card,
   CardBody,
+  CardBodyProps,
   CardFooter,
   CardHeader,
   Heading,
   StyleProps,
   ThemingProps,
 } from "@chakra-ui/react";
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, ReactNode } from "react";
 import { CustomCard } from "./CustomCard";
 type props = {
-  header?: string;
+  heading?: string;
   buttonText?: string;
   OnClick?: () => void;
+  footerElements?: Array<JSX.Element>;
+  cardBodyStyle?: CardBodyProps;
 };
 
 const BasicCard: React.FC<
   PropsWithChildren<StyleProps & ThemingProps<"Card"> & props>
-> = ({ children, header, buttonText, OnClick, ...StyleProps }) => {
+> = ({
+  children,
+  heading,
+  buttonText,
+  OnClick,
+  footerElements,
+  backgroundColor,
+  cardBodyStyle,
+  ...StyleProps
+}) => {
+  backgroundColor ??= "gray.800";
   return (
     <CustomCard
-      backgroundColor={"brand.100"}
-      variant={"outline"}
+      backgroundColor={backgroundColor}
+      overflowY={"auto"}
+      maxHeight={"full"}
       {...StyleProps}
     >
-      {header ? (
+      {heading ? (
         <CardHeader>
-          <Heading size={"md"}>{header}</Heading>
+          <Heading size={"xl"} color={"white"} userSelect="none">
+            {heading}
+          </Heading>
         </CardHeader>
       ) : null}
-      <CardBody>{children}</CardBody>
-      {buttonText ? (
-        <CardFooter justify={"end"}>
-          <Button onClick={OnClick}>{buttonText}</Button>
-        </CardFooter>
+      <CardBody
+        border={"thin solid"}
+        borderColor={"whiteAlpha.500"}
+        borderRadius="md"
+        margin={2}
+        overflowY={"auto"}
+        // overflowY={"scroll"}
+        maxHeight={"full"}
+        {...(cardBodyStyle ?? null)}
+      >
+        {children}
+      </CardBody>
+      {footerElements ? (
+        <CardFooter justify={"end"}>{footerElements}</CardFooter>
       ) : null}
     </CustomCard>
   );

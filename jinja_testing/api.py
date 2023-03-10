@@ -58,14 +58,15 @@ def handleExceptions(e):
     message: str = ""
 
     # isinstance has to also be checked in order for Pylance type inference to work properly.
-    if issubclass(type(e), jinja2SchemaExceptions.InferException) or isinstance(
-        e, jinja2SchemaExceptions.InferException
-    ):
-        message = str(e)
-    elif hasattr(e, "message") and e.message and isinstance(e.message, str):
+    # if issubclass(type(e), jinja2SchemaExceptions.InferException) or isinstance(
+    #     e, jinja2SchemaExceptions.InferException
+    # ):
+    #     message = str(e)
+
+    if hasattr(e, "message") and e.message and isinstance(e.message, str):
         message = e.message
     else:
-        raise e
+        message = str(e)
 
     detail = jsonable_encoder(APIException(msg=message, type=e.__class__.__name__))
     raise HTTPException(
@@ -137,5 +138,6 @@ def render(render_body: RenderBody):
         JsonSchemaExceptions._Error,
         jinja2Exceptions.TemplateError,
         jinja2SchemaExceptions.InferException,
+        TypeError,
     ) as e:
         handleExceptions(e)
