@@ -69,7 +69,6 @@ function App() {
   }, [selectedValue]);
   useEffect(() => {
     setInputSchema(undefined);
-    console.log("ASDASDASDASD");
   }, [usedPresetName]);
 
   const handleSelectChange: ChangeEventHandler<HTMLSelectElement> = (
