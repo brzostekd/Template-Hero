@@ -109,7 +109,7 @@ function App() {
       title: `Encountered a wild ${type}!`,
       description: msg,
       status: "error",
-      duration: 6000,
+      duration: 4000,
       isClosable: true,
     });
   }

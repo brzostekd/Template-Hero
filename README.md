@@ -17,5 +17,5 @@ Na backendzie wykorzystano fastapi jako framework webowy do tworzenia API oraz j
 ## Instalacja i uruchomienie
 
 1. Sklonuj repozytorium
-2. Zainstaluj zależności przy pomocy komendy `npm install`
+2. Zainstaluj moduły przy pomocy komendy `npm install`
 3. Uruchom aplikację przy pomocy komendy `npm start`
