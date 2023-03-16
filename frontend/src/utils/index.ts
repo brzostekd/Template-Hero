@@ -38,7 +38,7 @@ Then try the following:
 - Click "Add" to add another cat object to the array, then see the result.
 
 Important!
-You can explore other presets, but be sure to click the "Use preset" button to properly overwrite the current template. This prevents any accidental loss of your current work.
+In order to explore other presets, after selecting one, make sure to press the "Use preset" button to properly overwrite the current template. This prevents any accidental loss of your current work.
 -#}
 `,
   },
