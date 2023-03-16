@@ -28,6 +28,7 @@ const CustomCodeEditor: React.FC<props & FlexProps> = ({
       flexGrow={1}
       overflowY={"auto"}
       {...rest}
+      height="full"
     >
       <CodeEditor
         value={code}
