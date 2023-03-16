@@ -9,33 +9,37 @@ type Preset = {
 const presets: Preset[] = [
   {
     name: "TUTORIAL",
-    template: `{# Welcome to the Jinja template tutorial! This template demonstrates the different features and capabilities of the Jinja templating engine. 
+    template: `{#-
+RULES AND LIMITATIONS
+=====================
+1. The array of objects cannot be empty.
+2. All variables must be strings.
+3. All variables can be left empty, which will act as a boolean value.
+-#}
 
-First, press "Analyze Tmeplate" and provide variables that will be used throughout the template. We will then demonstrate how these variables can be used and manipulated using Jinja syntax. #}
-  
-{# Now let's use the variables we just defined in our template. #}
+Example
+=====================
+{% if cats[0].name %}
+Found {{ cats|length }} cat{%- if cats|length > 1 %}s{% endif %}.
 
-Hi there, {{ name }}!
+  {%- for cat in cats %}
+  - Name: {{ cat.name }}
+  - Age: {{ cat.age }}
+  {%- endfor %}
+{%- else %}
+Error 404 - no cats found.
+{%- endif %}
 
-You are {{ age }} years old and your interests are:
-- {% for interest in interests -%}
-  {{ interest }},
-{% endfor %}
+{#-
+Click the "Analyze Template" button to infer the data required by this template.
+Then try the following:
+- Leave every field empty and click "Render".
+- Fill out fields for one (0th) cat object and click "Render" again.
+- Click "Add" to add another cat object to the array, then see the result.
 
-{# We can also loop through a list of objects and access their properties using Jinja syntax. #}
-
-Your friends are:
-{% for friend in friends %}
-- {{ friend.name }}, {{ friend.age }}
-{% endfor %}
-
-{# Finally, we can use conditional statements to display content based on certain conditions. #}
-
-{% if age|string == "25" %}
-You are 25 years old.
-{% else %}
-You are not 25 years old.
-{% endif %}
+Important!
+You can explore other presets, but be sure to click the "Use preset" button to properly overwrite the current template. This prevents any accidental loss of your current work.
+-#}
 `,
   },
   {
