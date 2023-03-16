@@ -1,6 +1,6 @@
 import { Flex, FlexProps, useToken } from "@chakra-ui/react";
 import CodeEditor from "@uiw/react-textarea-code-editor";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 type props = {
   code: string | undefined;
   setCode: React.Dispatch<React.SetStateAction<string | undefined>>;

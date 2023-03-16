@@ -38,30 +38,6 @@ You are not 25 years old.
 {% endif %}
 `,
   },
-  //   {
-  //     name: "REPORT CARD",
-  //     template: `REPORT CARD
-
-  // Student Name: {{ student_name }}
-  // Class: {{ class }}
-  // Year: {{ year }}
-
-  // Subject Scores:
-  // {% for subject in subjects %}
-  // - {{ subject.name }}: {{ subject.score }}/100
-  // {% endfor %}
-
-  // Total Score: {{ total_score }}/500
-
-  // {% if total_score >= 400 %}
-  // Result: Pass with Distinction
-  // {% elif total_score >= 300 %}
-  // Result: Pass
-  // {% else %}
-  // Result: Fail
-  // {% endif %}
-  // `,
-  //   },
   {
     name: "GOVERNMENTAL FORM",
     template: `GOVERNMENTAL FORM

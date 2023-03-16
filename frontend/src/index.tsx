@@ -3,13 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
-import {
-  Box,
-  Center,
-  ChakraBaseProvider,
-  extendTheme,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, ChakraBaseProvider, extendTheme } from "@chakra-ui/react";
 
 const myBrandColor = {
   50: "#e7ebee",

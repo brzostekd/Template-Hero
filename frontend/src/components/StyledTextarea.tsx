@@ -1,5 +1,4 @@
 import { TextareaProps, Textarea } from "@chakra-ui/react";
-import { None } from "framer-motion";
 import { useRef, useEffect } from "react";
 
 const StyledTextarea: React.FC<React.PropsWithChildren & TextareaProps> = ({

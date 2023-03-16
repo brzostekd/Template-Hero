@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardHeader,
-  CardProps,
-  ComponentWithAs,
-  Heading,
-  StyleProps,
-} from "@chakra-ui/react";
+import { Card, CardHeader, CardProps, Heading } from "@chakra-ui/react";
 import React, { PropsWithChildren } from "react";
 type props = {
   heading?: string;

@@ -1,6 +1,4 @@
 import {
-  Button,
-  Card,
   CardBody,
   CardBodyProps,
   CardFooter,
@@ -9,7 +7,7 @@ import {
   StyleProps,
   ThemingProps,
 } from "@chakra-ui/react";
-import React, { PropsWithChildren, ReactNode } from "react";
+import React, { PropsWithChildren } from "react";
 import { CustomCard } from "./CustomCard";
 type props = {
   heading?: string;

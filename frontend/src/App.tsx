@@ -13,11 +13,9 @@ import {
   AccordionPanel,
   Box,
   Flex,
-  ExpandedIndex,
-  StyleProps,
   FormLabel,
 } from "@chakra-ui/react";
-import React, {
+import {
   ChangeEvent,
   ChangeEventHandler,
   useEffect,
