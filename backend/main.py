@@ -21,6 +21,7 @@ app.add_middleware(
     allow_origins=[
         "https://brzostekd.github.io",
         "http://brzostekd.github.io",
+        "http://localhost:3000",
     ],
     allow_credentials=False,
     allow_methods=["*"],
@@ -107,10 +108,7 @@ def extract_schema(
 ) -> Dict[str, Any]:
     try:
         return getJsonSchema(template.template)
-    except (
-        jinja2Exceptions.TemplateError,
-        jinja2SchemaExceptions.InferException,
-    ) as e:
+    except Exception as e:
         handleExceptions(e)
 
 
@@ -137,10 +135,5 @@ def render(render_body: RenderBody):
         jsonSchema = getJsonSchema(render_body.template)
         jsonschema.validate(render_body.input, jsonSchema)
         return template.render(render_body.input)
-    except (
-        JsonSchemaExceptions._Error,
-        jinja2Exceptions.TemplateError,
-        jinja2SchemaExceptions.InferException,
-        TypeError,
-    ) as e:
+    except Exception as e:
         handleExceptions(e)
