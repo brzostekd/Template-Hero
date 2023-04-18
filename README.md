@@ -1,6 +1,6 @@
 # Template Hero
 
-Wypróbuj plikację live na [GitHubPages](https://brzostekd.github.io/Template-Hero/index.html).
+Wypróbuj plikację hostowaną na [GitHub Pages](https://brzostekd.github.io/Template-Hero/index.html).
 
 Dokumentacja API dostępna jest [tutaj](https://backend-1-j6216561.deta.app/docs).
 
