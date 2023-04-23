@@ -56,8 +56,11 @@ function App() {
   useEffect(() => {
     if (selectRef && selectRef.current) {
       setTextEditorValueUsingPreset(selectRef.current.value);
+      setSelectedValue(selectRef.current.value);
+      setUsedPresetName(selectRef.current.value);
     }
   }, []);
+
   useEffect(() => {
     setRenderedText(undefined);
   }, [inputSchema]);
@@ -65,6 +68,7 @@ function App() {
   useEffect(() => {
     setRenderedText(undefined);
   }, [selectedValue]);
+
   useEffect(() => {
     setInputSchema(undefined);
   }, [usedPresetName]);
@@ -195,8 +199,12 @@ function App() {
                 </StyledSelect>
                 <Button
                   onClick={handleUsePreset}
-                  colorScheme={
-                    selectedValue !== usedPresetName ? "blue" : "gray"
+                  // colorScheme={
+                  //   selectedValue !== usedPresetName ? "blue" : "gray"
+                  // }
+                  colorScheme={"blue"}
+                  display={
+                    selectedValue !== usedPresetName ? "initial" : "none"
                   }
                   flexShrink={0}
                 >
@@ -284,8 +292,12 @@ function App() {
                       </StyledSelect>
                       <Button
                         onClick={handleUsePreset}
-                        colorScheme={
-                          selectedValue !== usedPresetName ? "blue" : "gray"
+                        // colorScheme={
+                        //   selectedValue !== usedPresetName ? "blue" : "gray"
+                        // }
+                        colorScheme={"blue"}
+                        display={
+                          selectedValue !== usedPresetName ? "initial" : "none"
                         }
                         flexShrink={0}
                       >
@@ -344,8 +356,8 @@ function App() {
               as={Flex}
               width={"full"}
               flexDirection="column"
-              flexGrow={accordIndex == i ? "1" : undefined}
-              flexShrink={accordIndex != i ? "0" : "1"}
+              flexGrow={accordIndex === i ? "1" : undefined}
+              flexShrink={accordIndex !== i ? "0" : "1"}
               minH="1rem"
               key={String(i)}
               sx={{
